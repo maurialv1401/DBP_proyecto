@@ -25,7 +25,7 @@ def hello():
 
 @app.route('/profile',methods=['GET'], endpoint='profile')
 def profile():
-    return jsonify({'name':'John Doe'})
+    return jsonify({'user':'User 1'})
 
 '''
 from app.routes.login_bp import login_bp
