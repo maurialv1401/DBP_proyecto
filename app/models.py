@@ -9,7 +9,7 @@ class Login(db.Model):
     timestamp = db.Column(db.Date())
 '''
 
-class User(UserMixin, db.Model):
+class Usuario(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     nombre = db.Column(db.String(64), nullable=False, index=True)
     apellido = db.Column(db.String(64), nullable=False, index=True)
@@ -31,30 +31,30 @@ class Intereses(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     carrera = db.Column(db.String(64), nullable=False)
     hobbies = db.Column(db.String(64), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
 class Descripcion(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     descripcion = db.Column(db.String(64), nullable=False)
     # fotos = db.Column(db.String(64), db.ForeignKey('user.username'), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
 class Distritos(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     distrito = db.Column(db.String(64), nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
 class Likes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user_id_1 = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    user_id_1 = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
 class Dislikes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    user_id_1 = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('usuario.id'))
+    user_id_1 = db.Column(db.Integer, db.ForeignKey('usuario.id'))
 
 # class Matches(db.Model):
 @login.user_loader
 def load_user(id):
-    return User.query.get(int(id))
+    return Usuario.query.get(int(id))

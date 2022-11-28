@@ -25,7 +25,7 @@ def hello():
 
 @app.route('/profile',methods=['GET'], endpoint='profile')
 def profile():
-    return jsonify({'user':'User 1'})
+    return jsonify({'id':'1','name':'diego','email':'diego@utec.com','password':'1234'})
 
 '''
 from app.routes.login_bp import login_bp
@@ -34,4 +34,4 @@ from app.routes.user_bp import user_bp
 app.register_blueprint(login_bp, url_prefix="/login")
 app.register_blueprint(user_bp, url_prefix="/user")
 '''
-#db.create_all()
+db.create_all()

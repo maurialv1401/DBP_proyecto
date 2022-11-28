@@ -20,17 +20,17 @@ const router = createRouter({
       path: '/profile',
       name: 'profile',
       component: () => import('../components/Profile.vue')
-    }/*,
+    },
     {
       path: '/register',
       name: 'register',
-      component: () => import('../components/Register.vue')
+      component: () => import('../components/RegisterPage.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../components/Login.vue')      
-    },
+      component: () => import('../components/LoginPage.vue')      
+    }/*,
     {
       path:'profile/:id',
       name: 'profile',
