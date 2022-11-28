@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email
-from app.models import User
+from app.models import Usuario
 
 
 class LoginForm(FlaskForm):
@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Log In')
 
     def validate_email(self, email):
-        user = User.query.filter_by(email=email.data).first()
+        user = Usuario.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email address.')
     def validate_password(self, password):

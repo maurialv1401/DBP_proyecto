@@ -1,8 +1,9 @@
 <template>
     <div>
-        <p>hola</p>
+        hola
     </div>
 </template>
 
 
-<script></script>
+<script>
+</script>

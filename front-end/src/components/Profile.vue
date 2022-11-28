@@ -1,6 +1,7 @@
 <template>
     <div>
-      <p> {{msg}} </p>
+      <h1 class="capi">Bienvenido {{ nombre }} {{ apellido }}</h1>
+      <button class="boton" @click="logout">Cerrar sesión</button>
     </div>
   </template>
   
@@ -11,24 +12,37 @@ export default {
   name: 'Profile-Page',
   data() {
     return {
-      msg: '',
+      nombre: '',
+      apellido: '',
+      email: '',
+      edad: ''
     };
   },
-  methods: {
-    getMessage() {
-      const path = 'http://localhost:5000/profile';
-      axios.get(path)
-        .then((res) => {
-          this.msg = res.data;
-        })
-        .catch((error) => {
-          // eslint-disable-next-line
-          console.error(error);
-        });
-    },
+  mounted(){
+    if(localStorage.getItem('user_nombre')){
+      this.nombre = localStorage.getItem('user_nombre');
+      this.apellido = localStorage.getItem('user_apellido');
+      this.email = localStorage.getItem('user_email');
+      this.edad = localStorage.getItem('user_edad');
+    }else{
+      this.$router.push('/login');
+    }
   },
-  created() {
-    this.getMessage();
+  methods: {
+      logout(){
+        localStorage.clear();
+        this.$router.push('/')
+      }
   },
 };
 </script>
+
+<style scoped>
+.capi{
+  text-transform: capitalize;
+}
+
+.boton{
+  text-align: right;
+}
+</style>
