@@ -1,8 +1,41 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-//import HelloWorld from './components/HelloWorld.vue'
 </script>
 
+<script>
+export default{
+    data: function(){
+        return {
+            nombre: "",
+            apellido: "",
+            email: "",
+            edad: "",
+            mostrar: true
+        }
+    },
+    mounted(){
+        if(localStorage.getItem("user_nombre") != null){
+          this.mostrar = false;
+          this.nombre = localStorage.getItem("user_nombre");
+          this.apellido = localStorage.getItem("user_apellido");
+          this.email = localStorage.getItem("user_email");
+          this.edad = localStorage.getItem("user_edad");
+        }else{
+          this.mostrar = true;
+          this.nombre = "";
+          this.apellido = "";
+          this.email = "";
+          this.edad = "";
+        }
+    },
+    methods: {
+      logout(){
+        localStorage.clear();
+        this.$router.push('/')
+      }
+  },
+}
+</script>
 
 <template>
   <!-- Navbar -->
@@ -25,10 +58,14 @@ import { RouterLink, RouterView } from 'vue-router'
         </ul>
         <ul class="navbar-nav d-flex flex-row ms-auto me-3">
           <li class="nav-item">
-            <RouterLink to="/register" class="nav-link">Register</RouterLink>
+            <RouterLink to="/register" class="nav-link" v-show="mostrar">Register</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/login" class="nav-link">Login</RouterLink>
+            <RouterLink to="/login" class="nav-link" v-show="mostrar">Login</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/Profile" class="nav-link capi" v-show="!mostrar">{{ nombre }} {{ apellido }}</RouterLink>
+            <button type="button" class="btn btn-danger" v-show="!mostrar" @click="logout">Cerrar sesión</button>
           </li>
           <li class="nav-item me-3 me-lg-0 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-mdb-toggle="dropdown"
@@ -78,6 +115,10 @@ import { RouterLink, RouterView } from 'vue-router'
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link:focus {
   color: rgba(255, 255, 255, 0.75);
+}
+
+.capi{
+  text-transform: capitalize;
 }
 </style>
 

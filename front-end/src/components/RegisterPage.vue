@@ -15,9 +15,17 @@ import axios from 'axios';
         },
         methods: {
             registerIt() {
-                axios.post('http://127.0.0.1:5000/register_url', this.register)
+                axios.post('http://127.0.0.1:5000/register', this.register)
                 .then(response => {
-                    console.log(response);
+                    axios.post('http://127.0.0.1:5000/get_user', this.register).then(data =>{     
+                        localStorage.setItem("user_nombre",data.data.nombre);
+                        localStorage.setItem("user_apellido",data.data.apellido);
+                        localStorage.setItem("user_email",data.data.email);
+                        localStorage.setItem("user_edad",data.data.edad);
+                        this.$router.push("/profile");
+                
+                })
+                    
                 });
             }
         },
