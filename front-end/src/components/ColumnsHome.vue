@@ -4,12 +4,12 @@
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3 bg-primary">
-            <h4>1. REGISTRATE </h4>
+            <h4>1. REGÍSTRATE </h4>
           </div>
           <div class="card-body">
             <img src="../assets/img/macbook-profile-svgrepo-com.svg" alt="computer">
             <p class="card-text">
-              Se parte de una amplia red de personas que buscan a las personas adecuadas para compartir habitación.
+              Sé parte de una amplia red de personas que buscan a las personas adecuadas para compartir habitación.
             </p>
           </div>
         </div>
