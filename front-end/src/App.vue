@@ -4,6 +4,10 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <script>
 export default{
+  components: {
+    RouterLink,
+    RouterView
+  },
     data: function(){
         return {
             nombre: "",
@@ -88,6 +92,7 @@ export default{
       </div>
     </div>
   </nav>
+  
   <!-- Navbar -->
   <RouterView />
 </template>

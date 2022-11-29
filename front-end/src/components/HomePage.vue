@@ -1,11 +1,15 @@
 <template>
-    <div>
-        <h2>ROOMMIES</h2>
-    </div>
+    <ColumnsHome/>
 </template>
 
 
 <script>
+import ColumnsHome from './ColumnsHome.vue'
+export default {
+    components: {
+        ColumnsHome
+    }
+}
 </script>
 
 <style scoped>
