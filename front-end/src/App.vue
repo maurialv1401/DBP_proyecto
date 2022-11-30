@@ -54,10 +54,13 @@ export default{
             <RouterLink to="/" class="nav-link" aria-current="page">Inicio</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/about" class="nav-link">About</RouterLink>
+            <RouterLink to="/profile" class="nav-link">Profile</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink to="/profile" class="nav-link">Profile</RouterLink>
+            <RouterLink to="/search" class="nav-link" aria-current="page">Descubre</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/about" class="nav-link">About</RouterLink>
           </li>
         </ul>
         <ul class="navbar-nav d-flex flex-row ms-auto me-3">
