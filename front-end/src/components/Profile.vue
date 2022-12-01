@@ -4,7 +4,7 @@
       <section class="vh-100 gradient-custom">
       <h1 class="margin-auto">
         <span class="margin-auto_content">
-          Bienvenido {{ nombre }} {{ apellido }} {{email}}
+          Bienvenido {{ nombre }} {{ apellido }} 
           </span>
       </h1>
       <h3 class="text-down"> ¿Listo para encontrar a tu rommie perfecto?</h3>
@@ -76,12 +76,12 @@ export default {
 <style scoped>
 .gradient-custom {
 /* fallback for old browsers */
-background: #6a11cb;
+background: #eee709;
 
 /* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+background: -webkit-linear-gradient(to right, rgb(226, 219, 15), rgb(192, 221, 7));
 
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+background: linear-gradient(to right, rgb(175, 203, 17), rgb(208, 255, 0))
 }
 </style>
