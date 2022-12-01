@@ -36,6 +36,7 @@ const router = createRouter({
       name: 'search',
       component: () => import('../components/SearchPage.vue')
     }
+    
     /*,
     {
       path:'profile/:id',

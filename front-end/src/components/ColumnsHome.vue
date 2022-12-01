@@ -1,5 +1,8 @@
 <template>
+  <div>
+    <section class="vh-100 gradient-custom">
   <div class="container">
+    
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
@@ -40,10 +43,17 @@
         </div>      </div>
     </div>
   </div>
+</section>
+  </div>
 </template>
 <style scoped>
 .container {
-  margin-top: 10%;
+  margin-top: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top:200px;
+  
 }
 .row {
     --bs-gutter-x: 1.5rem;
@@ -91,5 +101,18 @@ img {
     border: var(--bs-card-border-width) solid var(--bs-card-border-color);
     border-radius: var(--bs-card-border-radius);
 }
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+</style>
 
+<style scoped>
+.gradient-custom {
+/* fallback for old browsers */
+background: #6a11cb;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+}
 </style>
